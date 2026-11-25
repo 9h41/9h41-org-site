@@ -1885,7 +1885,7 @@ body {
   }
   .stack-card {
     position: relative;
-    transform: none !important;
+    transform: none;
     height: auto;
     padding: 20px 12px;
     margin-top: 0;
@@ -2320,11 +2320,11 @@ body {
   .page-home .services-steps > .section-label { position: absolute; left: 6px; top: 60px; margin: 0; }
   .page-home .steps-layout { display: block; margin: 0; padding: 385px 0 0; width: auto; max-width: none; }
   .page-home .steps-lead { position: absolute; left: 20px; top: 106px; width: 320px; max-width: none; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .steps-layout .step-card { display: block; width: 341px; max-width: none; margin: 90px 0 0 6px; text-align: center; }
+  .page-home .steps-layout .step-card { display: block; width: auto; max-width: none; margin: 90px 6px 0; text-align: center; }
   .page-home .steps-layout .steps-lead + .step-card { margin-top: 0; }
   .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; margin: 0; font-size: 60px !important; line-height: 48px; text-align: center; transform-origin: 50% 62%; }
   .page-home .steps-layout .step-card h3 { font-size: 20px; line-height: 28px; letter-spacing: -1.2px; text-align: center; }
-  .page-home .steps-layout .step-card > p:not(.step-num) { width: 296px; max-width: none; margin: 10px auto 0; text-align: center; }
+  .page-home .steps-layout .step-card > p:not(.step-num) { width: auto; max-width: 296px; margin: 10px auto 0; text-align: center; }
 }
 @media (max-width: 768px) {
   /* industries: static centred cards (the desktop stacking is off on phones) */
@@ -2334,10 +2334,11 @@ body {
   .page-home .industries-head .section-tag { position: absolute; left: 8px; top: 60px; margin: 0; }
   .page-home .industries-head .section-tag::before { left: 14px; width: 11px; height: 11px; top: 7px; }
   .page-home .industries-head h2 { position: absolute; left: 20px; top: 106px; width: 247px; max-width: none; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .industry-stack-wrap { position: static; width: auto; min-height: 0; margin: 0; padding: 259px 0 0 20px; }
+  .page-home .industry-stack-wrap { position: static; width: auto; min-height: 0; margin: 0; padding: 259px 20px 0; }
   .page-home .industries-head h2 br { display: none; }
   .page-home .stack-card:last-child { margin-bottom: 0; }
-  .page-home .stack-card { position: static; width: 320px; height: auto; margin: 0 0 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
+  .page-home .stack-card { transform-origin: 50% 50%; backface-visibility: visible; }
+  .page-home .stack-card { position: static; width: auto; max-width: 320px; height: auto; margin: 0 auto 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
   .page-home .industry-inner { min-height: 0; height: auto; padding: 43px 20px 0; background: rgba(242, 242, 242, 0.3); }
   .page-home .stack-card h3 { max-width: 240px; margin: 0 auto; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .stack-card ul { width: 200px; margin: 21px auto 0; font-size: 16px; line-height: 25.6px; letter-spacing: -0.96px; }
