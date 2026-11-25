@@ -4,7 +4,8 @@
   if (!cards.length || !nums.length) return;
 
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (reduced.matches) {
+  // phones: scroll-effects.js scrubs the numbers instead
+  if (reduced.matches || window.matchMedia("(max-width: 768px)").matches) {
     cards.forEach((card) => card.classList.add("num-in"));
     return;
   }

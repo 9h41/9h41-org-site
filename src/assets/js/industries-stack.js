@@ -6,6 +6,7 @@
   if (!pinnedInner || !stickyTrack) return;
 
   const media = window.matchMedia("(max-width: 1024px)");
+  const phone = window.matchMedia("(max-width: 768px)"); // phones: scroll-effects.js turns the cards in
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const cards = Array.from(section.querySelectorAll(".stack-card"));
   if (cards.length === 0) return;
@@ -18,6 +19,7 @@
   function render() {
     rafId = 0;
 
+    if (phone.matches) return;
     if (media.matches || prefersReducedMotion.matches) {
       cards.forEach((card, index) => {
         card.style.transform = `translate3d(0, ${index * 34}px, 0)`;

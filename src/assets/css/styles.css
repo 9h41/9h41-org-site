@@ -2337,7 +2337,7 @@ body {
   .page-home .industry-stack-wrap { position: static; width: auto; min-height: 0; margin: 0; padding: 259px 0 0 20px; }
   .page-home .industries-head h2 br { display: none; }
   .page-home .stack-card:last-child { margin-bottom: 0; }
-  .page-home .stack-card { position: static; transform: none !important; width: 320px; height: auto; margin: 0 0 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
+  .page-home .stack-card { position: static; width: 320px; height: auto; margin: 0 0 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
   .page-home .industry-inner { min-height: 0; height: auto; padding: 43px 20px 0; background: rgba(242, 242, 242, 0.3); }
   .page-home .stack-card h3 { max-width: 240px; margin: 0 auto; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .stack-card ul { width: 200px; margin: 21px auto 0; font-size: 16px; line-height: 25.6px; letter-spacing: -0.96px; }
@@ -2409,4 +2409,39 @@ body {
   .site-header nav { left: clamp(200px, calc(423px - (1440px - 100vw) * 0.45), 423px); }
   .nav-list a { padding-left: clamp(14px, 1.44vw, 20.72px); padding-right: clamp(14px, 1.44vw, 20.72px); }
   .nav-list a.nav-cta { padding: 6.29px 18px; }
+}
+
+/* Wix looping effects: section dots pulse (2s, 3s on the figures dot on phones), job icons breathe on phones */
+@keyframes motion-pulse {
+  27% { transform: scale(0.924); }
+  45% { transform: scale(1); }
+  72% { transform: scale(0.894); }
+  100% { transform: scale(1); }
+}
+@keyframes motion-breathe {
+  0% { transform: translate3d(0, 0, 0); animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  25% { transform: translate3d(0, 10px, 0); animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  75% { transform: translate3d(0, -10px, 0); animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.section-label .dot,
+.industries-head .section-tag::before { animation: motion-pulse 2s linear infinite; }
+@media (max-width: 768px) {
+  .page-home .figures-block .section-label .dot { animation-duration: 3s; }
+  .page-home .jobs-rows .job-icon { animation: motion-breathe 5s linear infinite; }
+  .page-home .steps-layout .step-card .step-num { opacity: 1; transition: none; transform-origin: 50% 50%; }
+  .page-home .figures-grid strong { display: inline-block; transform-origin: 50% 50%; }
+  .page-home .stack-card { will-change: transform; }
+  /* pinned, transparent header that slides away while scrolling down (scroll-effects.js) */
+  .site-header,
+  .page-home .site-header,
+  .page-coding-gouter .site-header,
+  .page-association .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: transparent; backdrop-filter: none; transition: transform 300ms ease; }
+  .site-header.header-hidden { transform: translateY(-100%); }
+  body:not(.page-home) main.page-content.container { padding-top: 81px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-label .dot,
+  .industries-head .section-tag::before,
+  .page-home .jobs-rows .job-icon { animation: none; }
 }

@@ -132,7 +132,7 @@ pageClass: page-coding-gouter
   (function () {
     const hero = document.querySelector('.coding-hero');
     if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const stickers = Array.from(hero.querySelectorAll('.coding-sticker'));
+    const stickers = Array.from(hero.querySelectorAll('.coding-sticker, .coding-coming')); // Wix moves "Prochainement" too, without blur
     if (!stickers.length) return;
 
     let tx = 0;
@@ -152,21 +152,33 @@ pageClass: page-coding-gouter
         const ry = ax * (10 * d);
         const base = el.dataset.base ? `${el.dataset.base} ` : '';
         el.style.transform = `${base}translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        // Wix blurs the stickers slightly while they tilt (up to 2px)
+        if (el.classList.contains('coding-sticker')) el.style.filter = `blur(${Math.min(2, (Math.abs(x) + Math.abs(y)) / 14).toFixed(1)}px)`;
       }
       rafId = requestAnimationFrame(render);
     }
 
     function updateFromPointer(clientX, clientY) {
       const r = hero.getBoundingClientRect();
-      tx = ((clientX - r.left) / r.width - 0.5) * 2;
-      ty = ((clientY - r.top) / r.height - 0.5) * 2;
+      tx = Math.max(-1.5, Math.min(1.5, ((clientX - r.left) / r.width - 0.5) * 2));
+      ty = Math.max(-1.5, Math.min(1.5, ((clientY - r.top) / r.height - 0.5) * 2));
     }
 
-    hero.addEventListener('mousemove', (e) => updateFromPointer(e.clientX, e.clientY));
+    // the effect follows the pointer; on phones (no pointer) it follows the last touch, or the middle of the
+    // screen, so scrolling moves the hero under it as on Wix
+    let pointer = null;
+    hero.addEventListener('mousemove', (e) => { pointer = [e.clientX, e.clientY]; updateFromPointer(e.clientX, e.clientY); });
     hero.addEventListener('mouseleave', () => {
+      pointer = null;
       tx = 0;
       ty = 0;
     });
+    const touchOnly = window.matchMedia('(hover: none)');
+    window.addEventListener('touchmove', (e) => { const t = e.touches[0]; if (t) pointer = [t.clientX, t.clientY]; }, { passive: true });
+    window.addEventListener('scroll', () => {
+      const at = pointer || (touchOnly.matches ? [window.innerWidth / 2, window.innerHeight / 2] : null);
+      if (at) updateFromPointer(at[0], at[1]);
+    }, { passive: true });
 
     if (!rafId) rafId = requestAnimationFrame(render);
   })();
