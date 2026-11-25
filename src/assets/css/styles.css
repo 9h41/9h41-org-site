@@ -1005,7 +1005,7 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   min-height: 2884px;
-  padding: 31px 0 80px;
+  padding: 31px 0 0;
 }
 .association-about h1 {
   margin: 0 0 0 10.1543%;
@@ -1018,14 +1018,13 @@ body {
   color: rgb(34, 82, 204);
 }
 .association-copy {
-  position: absolute;
-  left: 10.5059%;
-  top: 176.718px;
+  position: relative;
+  margin-left: 10.5059%;
+  margin-top: 45.7px;
+  margin-bottom: -8px;
   width: 74.8438%;
-  margin: 0;
   color: rgb(34, 82, 204);
   font-family: "azeret-mono", "azeret mono", monospace;
-  min-height: 2636.188px;
 }
 .association-copy p {
   margin: 0;
@@ -2106,6 +2105,8 @@ body {
     width: 100%;
     min-height: 0;
     margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
   }
   .association-copy p {
     font-size: 16px;
@@ -2150,7 +2151,7 @@ body {
 .page-privacy .legal-text { margin-top: -7px; }
 .page-privacy .legal-heading { font-size: 20px; line-height: 20px; letter-spacing: -1.28px; margin: 33px 0 0; }
 .page-privacy .legal-text + ul + .legal-heading { margin-top: 46px; }
-.page-privacy ol + .legal-heading { margin-top: -20px; }
+.page-privacy ol + .legal-heading { margin-top: 0; }
 
 .page-a11y { background: linear-gradient(#f2f2f2 0 158px, #fff 158px); }
 .page-a11y .legal-frame { margin-top: 158px; padding: 22px 23px 0; background: rgb(255, 161, 14); }
@@ -2214,12 +2215,12 @@ body {
     margin: 87px 0 0;
     width: auto;
     max-width: none;
-    grid-template-columns: 489.5px 234px 234px 234px;
-    column-gap: 45.5px;
+    grid-template-columns: 34vw 16.25vw 16.25vw 16.25vw;
+    column-gap: 3.16vw;
     row-gap: 0;
   }
-  .page-home .steps-lead { margin: 69px 0 0; width: 369px; max-width: none; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .steps-layout .step-card { display: block; max-width: none; width: 234px; }
+  .page-home .steps-lead { margin: 69px 0 0; width: min(369px, 32vw); max-width: none; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .steps-layout .step-card { display: block; max-width: none; width: 16.25vw; }
   .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; text-align: left; transform-origin: 0 62%; }
   .page-home .steps-layout .step-card h3,
   .page-home .steps-layout .step-card > p:not(.step-num) { text-align: left; width: auto; max-width: 234px; margin-left: 0; }
@@ -2233,10 +2234,10 @@ body {
 /* Home industries, Wix geometry: 797 x 464 cards from y+154, 509px apart */
 @media (min-width: 1025px) {
   .page-home .industries { border: 0; }
-  .page-home .industries-inner { grid-template-columns: 557px minmax(0, 1fr); min-height: 1717px; }
-  .page-home .industries-head { width: 557px; padding: 80px 0 0 40px; }
+  .page-home .industries-inner { grid-template-columns: 38.68vw minmax(0, 1fr); min-height: 1717px; }
+  .page-home .industries-head { width: 38.68vw; padding: 80px 0 0 40px; }
   .page-home .industries-head h2 { margin-top: 49px; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .industry-stack-wrap { margin-top: 154px; width: 797px; min-height: 464px; }
+  .page-home .industry-stack-wrap { margin-top: 154px; width: 55.35vw; min-height: 464px; }
   .page-home .stack-card { height: 464px; padding: 39px 40px 0; background: rgba(255, 161, 14, 0.39); border-radius: 11.25px; transform: translate3d(0, calc(var(--i) * 509px), 0); }
   .page-home .industry-inner { height: auto; min-height: 349px; padding: 71px 72px 40px 71px; background: rgba(242, 242, 242, 0.3); }
   .page-home .stack-card ul { margin-top: 31px; }
@@ -2253,9 +2254,9 @@ body {
   .page-home .clients-block > .section-label { left: 45px; top: 86px; }
   .page-home .clients-logos { transform: translateX(-7px); }
 
-  .page-home .figures-grid { position: absolute; top: 180px; left: 93px; margin: 0; width: auto; grid-template-columns: repeat(4, 215px); gap: 116px; }
+  .page-home .figures-grid { position: absolute; top: 180px; left: 6.46vw; margin: 0; width: auto; grid-template-columns: repeat(4, 14.93vw); gap: 8.06vw; }
   .page-home .figures-grid strong { font-family: "k2d", sans-serif; margin-top: 22px; font-weight: 700; font-size: 108px; line-height: 118.8px; letter-spacing: -5.4px; }
-  .page-home .figures-grid span { top: 150px; width: 215px; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
+  .page-home .figures-grid span { top: 150px; width: 14.93vw; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
 
   .page-home .jobs-block h2 { position: absolute; left: 40px; top: 156px; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .jobs-rows { position: absolute; left: 40px; right: 40px; top: 246px; margin: 0; max-width: none; }
@@ -2269,7 +2270,7 @@ body {
 
   .page-home .contact-layout { display: block; margin: 0; }
   .page-home .contact-intro { position: absolute; left: 40px; top: 156px; max-width: 288px; font-size: 24px; line-height: 33.6px; letter-spacing: -1.92px; }
-  .page-home .contact-live { position: absolute; left: 618px; top: 158px; width: 737px; grid-template-columns: 337px 337px; column-gap: 51px; }
+  .page-home .contact-live { position: absolute; left: 42.92vw; top: 158px; width: 51.18vw; grid-template-columns: 23.4vw 23.4vw; column-gap: 3.54vw; }
   .page-home .contact-live h2 { margin: 0 0 39px; font-size: 22px; line-height: 33px; width: 400px; white-space: nowrap; height: 26px; line-height: 26px; margin-bottom: 46px; }
   .page-home .contact-live label { font-size: 14px; line-height: 19.6px; margin-bottom: 8px; }
   .page-home .contact-live input { height: 40px; padding: 8px 0; margin-bottom: 41px; font-size: 16px; line-height: 24px; }
@@ -2399,4 +2400,13 @@ body {
 }
 @media (max-width: 768px) {
   .page-home .section-label .dot { left: 14px; width: 11px; height: 11px; top: 7px; border-radius: 2px; }
+}
+@media (min-width: 1025px) {
+  .nav-list li:nth-child(5) { margin-right: -6px; } /* Wix: CTA ends 14px from the right edge */
+}
+@media (min-width: 1025px) and (max-width: 1439px) {
+  /* below the 1440 design the menu starts earlier and its links tighten, so the CTA stays on screen */
+  .site-header nav { left: clamp(200px, calc(423px - (1440px - 100vw) * 0.45), 423px); }
+  .nav-list a { padding-left: clamp(14px, 1.44vw, 20.72px); padding-right: clamp(14px, 1.44vw, 20.72px); }
+  .nav-list a.nav-cta { padding: 6.29px 18px; }
 }
