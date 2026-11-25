@@ -688,8 +688,8 @@ body {
 .clients-logos {
   position: absolute;
   top: 43px;
-  left: 380px;
-  width: 860px;
+  left: 230px; /* 380px on Wix, moved left to make room for Atos */
+  width: 1060px;
   margin-top: 0;
   display: flex;
   align-items: flex-start;
@@ -704,6 +704,7 @@ body {
 .clients-logos img:nth-child(2) { width: 225px; height: 112.47px; }
 .clients-logos img:nth-child(3) { width: 225px; height: 112.5px; }
 .clients-logos img:nth-child(4) { width: 188px; height: 63.7px; margin-left: 14px; margin-top: 19px; }
+.clients-logos img:nth-child(5) { width: 170px; height: 54.5px; margin-left: 30px; margin-top: 23px; }
 
 .figures-block {
   margin-top: 8px;
@@ -2358,6 +2359,7 @@ body {
   .page-home .clients-logos img:nth-child(2) { height: 153px !important; margin-top: -44px !important; }
   .page-home .clients-logos img:nth-child(3) { height: 120px !important; margin-top: -6px !important; object-fit: cover; }
   .page-home .clients-logos img:nth-child(4) { height: 70px !important; margin-top: 10px !important; }
+  .page-home .clients-logos img:nth-child(5) { height: 58px !important; margin-top: 24px !important; }
 
   /* figures: one centred column, 157px apart */
   .page-home .figures-block { position: relative; padding: 0; border-bottom: 0; }
