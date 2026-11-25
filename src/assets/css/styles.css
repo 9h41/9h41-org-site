@@ -2446,3 +2446,7 @@ body {
   .industries-head .section-tag::before,
   .page-home .jobs-rows .job-icon { animation: none; }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* tablets: one centred column, so the numbers sit in the middle like the text below them */
+  .steps-layout .step-card .step-num { text-align: center; width: auto; max-width: none; transform-origin: 50% 62%; }
+}
