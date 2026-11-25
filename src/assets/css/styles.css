@@ -1027,10 +1027,10 @@ body {
 }
 .association-copy h2 {
   margin: 0;
-  font-size: 36px;
-  line-height: 39.6px;
+  font-size: 34px;
+  line-height: 54.4px;
   font-weight: 400;
-  letter-spacing: -2.16px;
+  letter-spacing: normal;
 }
 .association-privacy {
   position: absolute;
