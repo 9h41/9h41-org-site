@@ -13,7 +13,8 @@ const outputRoot = path.join('parity', mode);
 const liveBase = 'https://www.9h41.org';
 const localBase = 'http://127.0.0.1:8080';
 
-const browser = await chromium.launch({ headless: true });
+// PARITY_CHANNEL=chrome uses the installed Google Chrome instead of Playwright's bundled build
+const browser = await chromium.launch({ headless: true, channel: process.env.PARITY_CHANNEL });
 
 try {
   for (const [device, viewport] of Object.entries(viewports)) {

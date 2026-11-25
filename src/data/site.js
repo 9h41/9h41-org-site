@@ -7,7 +7,7 @@ module.exports = {
   domain,
   lang: "fr",
   locale: "fr_FR",
-  description: "Agence web et mobile a Tours. 9h41 concoit des solutions IT sur mesure, integrant design, developpement, IA et maintenance.",
+  description: "Agence web et mobile à Tours. 9h41 conçoit des solutions IT sur mesure, intégrant design, développement, IA et maintenance.",
   author: "9h41",
   email: "contact@9h41.org",
   socialImage: "/assets/images/social-card.png",
