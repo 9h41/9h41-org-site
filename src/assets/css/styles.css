@@ -687,24 +687,29 @@ body {
 }
 .clients-logos {
   position: absolute;
+  /* Wix had four logos from x380; with six they share the space after the label, evenly spread */
   top: 43px;
-  left: 230px; /* 380px on Wix, moved left to make room for Atos */
-  width: 1060px;
+  bottom: 43px;
+  left: 210px;
+  right: 30px;
   margin-top: 0;
   display: flex;
-  align-items: flex-start;
-  gap: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 .clients-logos img {
   max-height: none;
   width: auto;
   object-fit: contain;
 }
-.clients-logos img:nth-child(1) { width: 200px; height: 100px; margin-right: 11.25px; }
-.clients-logos img:nth-child(2) { width: 225px; height: 112.47px; }
-.clients-logos img:nth-child(3) { width: 225px; height: 112.5px; }
-.clients-logos img:nth-child(4) { width: 188px; height: 63.7px; margin-left: 14px; margin-top: 19px; }
-.clients-logos img:nth-child(5) { width: 170px; height: 54.5px; margin-left: 30px; margin-top: 23px; }
+.clients-logos img { flex: none; width: auto; }
+.clients-logos img:nth-child(1) { height: 90px; }
+.clients-logos img:nth-child(2) { height: 100px; }
+.clients-logos img:nth-child(3) { height: 100px; }
+.clients-logos img:nth-child(4) { height: 46px; }
+.clients-logos img:nth-child(5) { height: 46px; }
+.clients-logos img:nth-child(6) { height: 44px; }
 
 .figures-block {
   margin-top: 8px;
@@ -2256,7 +2261,6 @@ body {
   .page-home .contact-section { position: relative; padding: 0; border-bottom: 0; }
   .page-home .home-band > section > .section-label { position: absolute; left: 40px; top: 81px; margin: 0; }
   .page-home .clients-block > .section-label { left: 45px; top: 86px; }
-  .page-home .clients-logos { transform: translateX(-7px); }
 
   .page-home .figures-grid { position: absolute; top: 180px; left: 93px; margin: 0; width: auto; grid-template-columns: repeat(4, 215px); gap: 116px; }
   .page-home .figures-grid strong { font-family: "k2d", sans-serif; margin-top: 22px; font-weight: 700; font-size: 108px; line-height: 118.8px; letter-spacing: -5.4px; }
@@ -2360,6 +2364,7 @@ body {
   .page-home .clients-logos img:nth-child(3) { height: 120px !important; margin-top: -6px !important; object-fit: cover; }
   .page-home .clients-logos img:nth-child(4) { height: 70px !important; margin-top: 10px !important; }
   .page-home .clients-logos img:nth-child(5) { height: 58px !important; margin-top: 24px !important; }
+  .page-home .clients-logos img:nth-child(6) { height: 44px !important; margin-top: 28px !important; }
 
   /* figures: one centred column, 157px apart */
   .page-home .figures-block { position: relative; padding: 0; border-bottom: 0; }
