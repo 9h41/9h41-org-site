@@ -2281,3 +2281,122 @@ body {
   .page-home .section-label .dot { width: 15px; height: 15px; top: 5px; border-radius: 3px; }
   .page-home .industries-head .section-tag::before { width: 15px; height: 15px; top: 5px; }
 }
+
+/* Home on phones: the same Wix bands, cards inset 15px all round */
+@media (max-width: 768px) {
+  .page-home { background: rgb(34, 82, 204); }
+  .page-home .page-content { padding-bottom: 0; }
+  .page-home .home-band { padding: 15px; }
+  .page-home .home-band > section { margin: 0 !important; width: auto; border-radius: 10px; }
+  .page-home .home-band--hero { background: linear-gradient(rgb(34, 82, 204) 0%, rgb(237, 135, 176) 31.641588%, rgb(245, 220, 230) 66.013802%, rgb(230, 230, 230) 98.285553%); }
+  .page-home .home-band--hero > section { min-height: 410px; height: 410px; border-radius: 3px; }
+  .page-home .home-band--services { background: conic-gradient(from 152deg at 72.975258% 44.6875%, rgb(0, 87, 225) 0%, rgb(249, 197, 180) 46.090324%, rgb(186, 225, 250) 100%); }
+  .page-home .home-band--services > section { min-height: 1926px; }
+  .page-home .home-band--dayline { padding: 0; background: rgb(186, 225, 250); }
+  .page-home .home-band--dayline > section { border-radius: 0; min-height: 460px; height: 460px; }
+  .page-home .home-band--industries { background: linear-gradient(0deg, rgb(237, 135, 176) 0%, rgb(230, 230, 230) 20.785362%, rgb(230, 230, 230) 40.50507%, rgb(235, 195, 55) 49.331825%, rgb(230, 230, 230) 55.446049%, rgb(230, 230, 230) 77.460251%, rgb(237, 135, 176) 100%); }
+  .page-home .home-band--industries > section { min-height: 1621px; }
+  .page-home .home-band--clients { background: rgb(230, 230, 230); }
+  .page-home .home-band--clients > section { min-height: 544px; }
+  .page-home .home-band--figures { background: linear-gradient(360deg, rgb(34, 82, 204) 0%, rgb(0, 134, 67) 18.684896%, rgb(235, 195, 55) 51.0588%, rgb(230, 230, 230) 72.926949%, rgb(230, 230, 230) 100%); }
+  .page-home .home-band--figures > section { min-height: 756px; }
+  .page-home .home-band--jobs { background: linear-gradient(rgb(34, 82, 204) 0%, rgb(0, 134, 67) 68.455315%, rgb(237, 135, 176) 98.903938%); }
+  .page-home .home-band--jobs > section { min-height: 1200px; }
+  .page-home .home-band--contact { background: linear-gradient(rgb(237, 135, 176) 0%, rgb(230, 230, 230) 99.065628%); }
+  .page-home .home-band--contact > section { min-height: 1249px; }
+}
+@media (max-width: 768px) {
+  .page-home .site-header { position: absolute; top: 0; left: 0; right: 0; background: transparent; }
+}
+@media (max-width: 768px) {
+  /* hero: 324 x 188 bubble at (16, 141) in the card */
+  .page-home .home-hero { position: relative; padding: 0; min-height: 0; }
+  .page-home .speech-box { position: absolute; left: 16px; top: 141px; width: 324px; max-width: none; height: 188px; min-height: 0; margin: 0; }
+  .page-home .hero-title { left: 56px; top: -3px; width: 260px; max-width: none; }
+  .page-home .hero-caption { left: 15px; top: 146px; width: 217px; max-width: none; letter-spacing: -0.77px; }
+  /* services: one centred column, 60px numbers, 90px between steps */
+  .page-home .services-steps { position: relative; padding: 0; }
+  .page-home .services-steps > .section-label { position: absolute; left: 6px; top: 60px; margin: 0; }
+  .page-home .steps-layout { display: block; margin: 0; padding: 385px 0 0; width: auto; max-width: none; }
+  .page-home .steps-lead { position: absolute; left: 20px; top: 106px; width: 320px; max-width: none; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .steps-layout .step-card { display: block; width: 341px; max-width: none; margin: 90px 0 0 6px; text-align: center; }
+  .page-home .steps-layout .steps-lead + .step-card { margin-top: 0; }
+  .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; margin: 0; font-size: 60px !important; line-height: 48px; text-align: center; transform-origin: 50% 62%; }
+  .page-home .steps-layout .step-card h3 { font-size: 20px; line-height: 28px; letter-spacing: -1.2px; text-align: center; }
+  .page-home .steps-layout .step-card > p:not(.step-num) { width: 296px; max-width: none; margin: 10px auto 0; text-align: center; }
+}
+@media (max-width: 768px) {
+  /* industries: static centred cards (the desktop stacking is off on phones) */
+  .page-home .industries { position: relative; border: 0; }
+  .page-home .industries-inner { display: block; min-height: 0; }
+  .page-home .industries-head { position: absolute; left: 0; top: 0; width: 100%; padding: 0; }
+  .page-home .industries-head .section-tag { position: absolute; left: 8px; top: 60px; margin: 0; }
+  .page-home .industries-head .section-tag::before { left: 14px; width: 11px; height: 11px; top: 7px; }
+  .page-home .industries-head h2 { position: absolute; left: 20px; top: 106px; width: 247px; max-width: none; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .industry-stack-wrap { position: static; width: auto; min-height: 0; margin: 0; padding: 259px 0 0 20px; }
+  .page-home .industries-head h2 br { display: none; }
+  .page-home .stack-card:last-child { margin-bottom: 0; }
+  .page-home .stack-card { position: static; transform: none !important; width: 320px; height: auto; margin: 0 0 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
+  .page-home .industry-inner { min-height: 0; height: auto; padding: 43px 20px 0; background: rgba(242, 242, 242, 0.3); }
+  .page-home .stack-card h3 { max-width: 240px; margin: 0 auto; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .stack-card ul { width: 200px; margin: 21px auto 0; font-size: 16px; line-height: 25.6px; letter-spacing: -0.96px; }
+  .page-home .stack-card li { margin: 0 0 26px; }
+  .page-home .stack-card li:last-child { margin-bottom: 0; }
+  .page-home .stack-card.is-covered h3, .page-home .stack-card.is-covered ul { opacity: 1; }
+
+  /* clients: logos stacked in the middle */
+  .page-home .clients-block { position: relative; padding: 0; }
+  .page-home .clients-block > .section-label { position: absolute; left: 15px; top: 84px; margin: 0; }
+  .page-home .clients-logos { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 0; padding: 113px 0 30px; }
+  .page-home .clients-logos img { width: 180px !important; max-width: none !important; max-height: none !important; margin: 0 !important; object-fit: contain; }
+  .page-home .clients-logos img:nth-child(1) { height: 149px !important; }
+  .page-home .clients-logos img:nth-child(2) { height: 153px !important; margin-top: -44px !important; }
+  .page-home .clients-logos img:nth-child(3) { height: 120px !important; margin-top: -6px !important; object-fit: cover; }
+  .page-home .clients-logos img:nth-child(4) { height: 70px !important; margin-top: 10px !important; }
+
+  /* figures: one centred column, 157px apart */
+  .page-home .figures-block { position: relative; padding: 0; border-bottom: 0; }
+  .page-home .figures-block > .section-label { position: absolute; left: 6px; top: 61px; margin: 0; }
+  .page-home .figures-grid { display: block; margin: 0; padding: 146px 0 0; width: auto; }
+  .page-home .figures-grid article { position: relative; height: 157px; text-align: center; }
+  .page-home .figures-grid article:last-child { height: 139px; }
+  .page-home .figures-grid strong { position: relative; top: -10px; font-family: "k2d", sans-serif; font-weight: 700; font-size: 60px; line-height: 66px; letter-spacing: -3px; }
+  .page-home .figures-grid span { position: static; display: block; width: auto; margin-top: -12px; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
+
+  /* jobs: each row a centred stack, 287px apart */
+  .page-home .jobs-block { position: relative; padding: 0; }
+  .page-home .jobs-block > .section-label { position: absolute; left: 5px; top: 61px; margin: 0; }
+  .page-home .jobs-block h2 { position: absolute; left: 20px; top: 106px; width: 320px; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .jobs-rows { margin: 0 30px; padding: 217px 0 0; max-width: none; }
+  .page-home .jobs-rows li { display: flex; flex-direction: column; align-items: center; height: 287px; padding: 50px 0 0; gap: 0; border: 0; border-top: 1px solid rgba(34, 82, 204, 0.3); }
+  .page-home .jobs-rows li:first-child { height: 283px; }
+  .page-home .jobs-rows li:last-child { border-bottom: 1px solid rgba(34, 82, 204, 0.3); }
+  .page-home .jobs-rows .job-icon { width: 46px; height: 46px; }
+  .page-home .jobs-rows li > a:not(.apply) { width: 175px; margin-top: 43px; white-space: normal; text-align: center; font-size: 16px; line-height: 22.4px; letter-spacing: -0.96px; }
+  .page-home .jobs-rows .apply { margin-top: 53px; padding: 0; font-size: 16px; line-height: 22.4px; letter-spacing: normal; }
+  .page-home .back-top { position: absolute; left: 0; right: 0; top: 1104px; margin: 0; }
+  .page-home .small-btn { min-width: 182px; height: 32px; padding: 0; border-radius: 10px; background: rgb(255, 161, 14); color: #f2f2f2; font-size: 16px; line-height: 32px; }
+
+  /* contact: one column, 268px fields */
+  .page-home .contact-section { position: relative; padding: 0; }
+  .page-home .contact-section > .section-label { position: absolute; left: 19px; top: 61px; margin: 0; }
+  .page-home .contact-layout { display: block; margin: 0; }
+  .page-home .contact-intro { position: absolute; left: 30px; top: 106px; width: 300px; max-width: none; font-size: 24px; line-height: 33.6px; letter-spacing: -1.92px; }
+  .page-home .contact-live { position: absolute; left: 30px; top: 452px; width: 280px; display: block; }
+  .page-home .contact-live h2 { width: 243px; margin: 0 0 43px; font-size: 22px; line-height: 29.5px; }
+  .page-home .contact-live label { display: block; font-size: 14px; line-height: 19.6px; margin: 0 0 8px; }
+  .page-home .contact-live input { display: block; width: 268px; height: 40px; padding: 8px 0; margin: 0 0 41px; font-size: 16px; line-height: 24px; }
+  .page-home .contact-live textarea { display: block; width: 280px; height: 75px; min-height: 75px; padding: 8px 0; margin: 16px 0 49px; font-size: 16px; line-height: 24px; }
+  .page-home .contact-live label.full { margin-bottom: 0; }
+  .page-home .contact-live button { display: block; width: 280px; height: 41px; min-height: 41px; border-radius: 10px; background: var(--ink); color: #f2f2f2; font-size: 16px; }
+}
+@media (max-width: 768px) {
+  .page-home .dayline { padding: 0; position: relative; }
+  .page-home .dayline::before { content: none; }
+  .page-home .dayline-title { position: absolute; left: 28px; top: 14px; width: 190px; padding: 0; font-size: 16px; line-height: 25.6px; letter-spacing: -0.96px; }
+  .page-home .dayline-track { position: absolute; left: 2px; top: 80px; width: 388px; height: 380px; margin: 0; }
+  .page-home .dayline-art { width: 100%; height: 100%; object-fit: contain; }
+}
+@media (max-width: 768px) {
+  .page-home .section-label .dot { left: 14px; width: 11px; height: 11px; top: 7px; border-radius: 2px; }
+}
