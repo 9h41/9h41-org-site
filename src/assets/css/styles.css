@@ -2322,7 +2322,7 @@ body {
   .page-home .steps-lead { position: absolute; left: 20px; top: 106px; width: 320px; max-width: none; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .steps-layout .step-card { display: block; width: auto; max-width: none; margin: 90px 6px 0; text-align: center; }
   .page-home .steps-layout .steps-lead + .step-card { margin-top: 0; }
-  .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; margin: 0; font-size: 60px !important; line-height: 48px; text-align: center; transform-origin: 50% 62%; }
+  .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; margin: 0; font-size: 60px !important; line-height: 48px; text-align: center; justify-self: stretch; align-self: auto; transform-origin: 50% 62%; }
   .page-home .steps-layout .step-card h3 { font-size: 20px; line-height: 28px; letter-spacing: -1.2px; text-align: center; }
   .page-home .steps-layout .step-card > p:not(.step-num) { width: auto; max-width: 296px; margin: 10px auto 0; text-align: center; }
 }
@@ -2448,5 +2448,5 @@ body {
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   /* tablets: one centred column, so the numbers sit in the middle like the text below them */
-  .steps-layout .step-card .step-num { text-align: center; width: auto; max-width: none; transform-origin: 50% 62%; }
+  .steps-layout .step-card .step-num { text-align: center; width: auto; max-width: none; justify-self: stretch; transform-origin: 50% 62%; }
 }
