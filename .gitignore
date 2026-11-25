@@ -1,0 +1,13 @@
+node_modules/
+_site/
+.DS_Store
+parity/**/*.png
+parity/**/*.json
+.mcp.json
+.vibe/
+.kiro/settings/
+.gemini/
+.ai/mcp/
+tmp/
+parity/diff/
+parity/report.md

@@ -1,0 +1,25 @@
+{
+  "name": "9h41-org-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static 11ty migration for 9h41.org",
+  "scripts": {
+    "clean": "rm -rf _site",
+    "build": "npm run clean && npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --port=8080",
+    "parity:baseline": "node scripts/parity-capture.mjs baseline",
+    "parity:current": "node scripts/parity-capture.mjs current",
+    "parity:diff": "node scripts/parity-diff.mjs",
+    "parity": "npm run parity:baseline && npm run parity:current && npm run parity:diff",
+    "parity:sections": "node scripts/parity-sections.mjs",
+    "parity:freeze": "node scripts/parity-sections-freeze.mjs",
+    "parity:guard": "node scripts/parity-sections-guard.mjs",
+    "parity:loop": "npm run parity:sections && npm run parity:freeze && npm run parity:guard"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "pixelmatch": "^6.0.0",
+    "playwright": "^1.58.2",
+    "pngjs": "^7.0.0"
+  }
+}

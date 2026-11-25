@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include "partials/head.njk" %}
+    <style>
+      html, body { margin: 0; padding: 0; background: #f2f2f2; }
+      .home-image-wrap { width: 100%; }
+      .home-image { display: block; width: 100%; height: auto; }
+      .home-image.mobile { display: none; }
+      @media (max-width: 760px) {
+        .home-image.desktop { display: none; }
+        .home-image.mobile { display: block; }
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 class="sr-only">Solutions IT & Agence Web a Tours</h1>
+      <div class="home-image-wrap" aria-label="Page d'accueil 9h41">
+        <img class="home-image desktop" src="/assets/images/home-desktop.png" alt="Accueil 9h41" />
+        <img class="home-image mobile" src="/assets/images/home-mobile.png" alt="Accueil 9h41 version mobile" />
+      </div>
+    </main>
+  </body>
+</html>

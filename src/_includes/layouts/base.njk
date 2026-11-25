@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include "partials/head.njk" %}
+  </head>
+  <body{% if pageClass %} class="{{ pageClass }}"{% endif %}>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="Accueil 9h41">
+          <img src="/assets/images/cdn/logo-wordmark.png" alt="9h41" />
+        </a>
+        <nav aria-label="Navigation principale">
+          <ul id="primary-menu" class="nav-list">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#emplois">Nous rejoindre</a></li>
+            <li><a href="/coding-gouter-tours/">Coding goûter</a></li>
+            <li><a href="/association-numerique-responsable/">Association We are here</a></li>
+            <li><a class="nav-cta" href="mailto:contact@9h41.org?subject=On%20passe%20la%20journee%20ensemble">Nous contacter</a></li>
+          </ul>
+        </nav>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu"></button>
+      </div>
+    </header>
+
+    <main id="main-content" class="container page-content">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; 2025 par 9h41</p>
+        <p><a href="https://www.grandecause-mentale.fr" rel="noreferrer" target="_blank">Sant&eacute; mentale grande cause nationale</a></p>
+      </div>
+    </footer>
+    <script src="/assets/js/industries-stack.js" defer></script>
+    <script src="/assets/js/services-nums.js" defer></script>
+    <script>
+      (function () {
+        const siteHeader = document.querySelector('.site-header');
+        const menuBtn = siteHeader ? siteHeader.querySelector('.menu-btn') : null;
+        const menuList = siteHeader ? siteHeader.querySelector('.nav-list') : null;
+
+        function closeMenu() {
+          if (!siteHeader || !menuBtn) return;
+          siteHeader.classList.remove('menu-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        if (siteHeader && menuBtn && menuList) {
+          menuBtn.addEventListener('click', function () {
+            const willOpen = !siteHeader.classList.contains('menu-open');
+            siteHeader.classList.toggle('menu-open', willOpen);
+            menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+          });
+
+          document.addEventListener('click', function (event) {
+            if (!siteHeader.classList.contains('menu-open')) return;
+            if (siteHeader.contains(event.target)) return;
+            closeMenu();
+          });
+
+          document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeMenu();
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 1024) closeMenu();
+          });
+
+          menuList.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+              closeMenu();
+            });
+          });
+        }
+
+        (function setupDesktopHeaderReveal() {
+          const header = document.querySelector('.site-header');
+          if (!header) return;
+
+          const desktopQuery = window.matchMedia('(min-width: 1025px)');
+          let lastY = window.scrollY || 0;
+          let ticking = false;
+
+          function updateHeaderReveal() {
+            ticking = false;
+            if (!desktopQuery.matches) {
+              header.classList.remove('header-float');
+              lastY = window.scrollY || 0;
+              return;
+            }
+
+            const y = window.scrollY || 0;
+            const delta = y - lastY;
+            const shouldFloat = y > 320 && delta < -3;
+
+            if (shouldFloat) {
+              header.classList.add('header-float');
+            } else if (delta > 6 || y < 140) {
+              header.classList.remove('header-float');
+            }
+
+            lastY = y;
+          }
+
+          function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(updateHeaderReveal);
+          }
+
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', updateHeaderReveal);
+          desktopQuery.addEventListener('change', updateHeaderReveal);
+          updateHeaderReveal();
+        })();
+
+        function scrollToHash(hash) {
+          if (!hash || hash.length < 2) return false;
+          const target = document.querySelector(hash);
+          if (!target) return false;
+          const header = document.querySelector('.site-header');
+          const headerOffset = header ? header.getBoundingClientRect().height + 14 : 110;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+          window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          return true;
+        }
+
+        document.addEventListener('click', function (event) {
+          const link = event.target.closest('.nav-list a[href*="#"]');
+          if (!link) return;
+          const url = new URL(link.href, window.location.origin);
+          if (url.pathname !== window.location.pathname) return;
+          event.preventDefault();
+          if (!scrollToHash(url.hash)) window.location.hash = url.hash;
+        });
+
+        if (window.location.hash) {
+          window.requestAnimationFrame(function () {
+            scrollToHash(window.location.hash);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
