@@ -28,7 +28,7 @@
     }
 
     const stickyTop = 126;
-    const trackOffset = 74;
+    const trackOffset = parseFloat(getComputedStyle(stickyTrack).marginTop) || 74;
     const start = section.offsetTop + trackOffset - stickyTop;
     const stickyDistance = Math.max(
       1,
@@ -36,7 +36,7 @@
     );
     const sectionProgress = clamp((window.scrollY - start) / stickyDistance, 0, 1);
 
-    const spread = 510;
+    const spread = 509;
     const stackedGap = 0;
     const ys = [];
 

@@ -2180,3 +2180,104 @@ body {
   .page-a11y .legal-frame { margin-top: 7px; }
   .page-coding-gouter .nav-wrap { top: 0; min-height: 81px; }
 }
+
+/* Home: full-width bands carry the Wix section gradients; the grey cards sit inside, 23px from the sides */
+@media (min-width: 1025px) {
+  .page-home { background: rgb(34, 82, 204); }
+  .home-band { padding: 0 23px 22px; }
+  .home-band > section { margin: 0 !important; width: auto; }
+  .home-band--hero { padding: 20px 20px 19px; background: linear-gradient(rgb(34, 82, 204) 0%, rgb(237, 135, 176) 31.641588%, rgb(245, 220, 230) 66.013802%, rgb(230, 230, 230) 98.285553%); }
+  .home-band--hero > section { min-height: 809px; height: 809px; }
+  .home-band--services { background: conic-gradient(from 152deg at 72.975258% 44.6875%, rgb(0, 87, 225) 0%, rgb(249, 197, 180) 46.090324%, rgb(186, 225, 250) 100%); }
+  .home-band--services > section { min-height: 1204px; }
+  .home-band--dayline { padding: 0; background: rgb(186, 225, 250); }
+  .home-band--dayline > section { border-radius: 0; min-height: 887px; height: 887px; }
+  .page-home .page-content { padding-bottom: 0; }
+  .home-band--industries { background: linear-gradient(0deg, rgb(237, 135, 176) 0%, rgb(230, 230, 230) 20.785362%, rgb(230, 230, 230) 40.50507%, rgb(235, 195, 55) 49.331825%, rgb(230, 230, 230) 55.446049%, rgb(230, 230, 230) 77.460251%, rgb(237, 135, 176) 100%); }
+  .home-band--industries > section { min-height: 1717px; }
+  .home-band--clients { background: rgb(230, 230, 230); }
+  .home-band--clients > section { min-height: 200px; }
+  .home-band--figures { padding-bottom: 23px; background: linear-gradient(360deg, rgb(34, 82, 204) 0%, rgb(0, 134, 67) 18.684896%, rgb(235, 195, 55) 51.0588%, rgb(230, 230, 230) 72.926949%, rgb(230, 230, 230) 100%); }
+  .home-band--figures > section { min-height: 458px; }
+  .home-band--jobs { background: linear-gradient(rgb(34, 82, 204) 0%, rgb(0, 134, 67) 68.455315%, rgb(237, 135, 176) 98.903938%); }
+  .home-band--jobs > section { min-height: 998px; }
+  .home-band--contact { background: linear-gradient(rgb(237, 135, 176) 0%, rgb(230, 230, 230) 99.065628%); }
+  .home-band--contact > section { min-height: 768px; }
+}
+
+/* Home services, Wix grid: lead at x61, three 234px columns at 596 / 876 / 1155, all left-aligned */
+@media (min-width: 1025px) {
+  .page-home .services-steps { padding: 0 0 0 38px; }
+  .page-home .services-steps::before, .page-home .services-steps::after { content: none; }
+  .page-home .services-steps > .section-label { position: absolute; left: 40px; top: 81px; margin: 0; }
+  .page-home .steps-layout {
+    margin: 87px 0 0;
+    width: auto;
+    max-width: none;
+    grid-template-columns: 489.5px 234px 234px 234px;
+    column-gap: 45.5px;
+    row-gap: 0;
+  }
+  .page-home .steps-lead { margin: 69px 0 0; width: 369px; max-width: none; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .steps-layout .step-card { display: block; max-width: none; width: 234px; }
+  .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; text-align: left; transform-origin: 0 62%; }
+  .page-home .steps-layout .step-card h3,
+  .page-home .steps-layout .step-card > p:not(.step-num) { text-align: left; width: auto; max-width: 234px; margin-left: 0; }
+  .page-home .steps-layout .step-card > p:not(.step-num) { margin-top: 7px; }
+  .page-home .steps-layout .step-card:nth-child(5),
+  .page-home .steps-layout .step-card:nth-child(6) { margin-top: 236px; }
+  .page-home .steps-layout .step-card:nth-child(5) { grid-column: 2; }
+  .page-home .steps-layout .step-card:nth-child(6) { grid-column: 3; }
+}
+
+/* Home industries, Wix geometry: 797 x 464 cards from y+154, 509px apart */
+@media (min-width: 1025px) {
+  .page-home .industries { border: 0; }
+  .page-home .industries-inner { grid-template-columns: 557px minmax(0, 1fr); min-height: 1717px; }
+  .page-home .industries-head { width: 557px; padding: 80px 0 0 40px; }
+  .page-home .industries-head h2 { margin-top: 49px; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .industry-stack-wrap { margin-top: 154px; width: 797px; min-height: 464px; }
+  .page-home .stack-card { height: 464px; padding: 39px 40px 0; background: rgba(255, 161, 14, 0.39); border-radius: 11.25px; transform: translate3d(0, calc(var(--i) * 509px), 0); }
+  .page-home .industry-inner { height: auto; min-height: 349px; padding: 71px 72px 40px 71px; background: rgba(242, 242, 242, 0.3); }
+  .page-home .stack-card ul { margin-top: 31px; }
+  .page-home .stack-card li:not(:last-child) { margin-bottom: 28.8px; }
+}
+
+/* Home lower sections, Wix geometry (offsets from each card's top-left corner at x23) */
+@media (min-width: 1025px) {
+  .page-home .clients-block,
+  .page-home .figures-block,
+  .page-home .jobs-block,
+  .page-home .contact-section { position: relative; padding: 0; border-bottom: 0; }
+  .page-home .home-band > section > .section-label { position: absolute; left: 40px; top: 81px; margin: 0; }
+  .page-home .clients-block > .section-label { left: 45px; top: 86px; }
+  .page-home .clients-logos { transform: translateX(-7px); }
+
+  .page-home .figures-grid { position: absolute; top: 180px; left: 93px; margin: 0; width: auto; grid-template-columns: repeat(4, 215px); gap: 116px; }
+  .page-home .figures-grid strong { font-family: "k2d", sans-serif; margin-top: 22px; font-weight: 700; font-size: 108px; line-height: 118.8px; letter-spacing: -5.4px; }
+  .page-home .figures-grid span { top: 150px; width: 215px; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
+
+  .page-home .jobs-block h2 { position: absolute; left: 40px; top: 156px; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .jobs-rows { position: absolute; left: 40px; right: 40px; top: 246px; margin: 0; max-width: none; }
+  .page-home .jobs-rows li { grid-template-columns: 56px 1fr 99px; gap: 0 40px; padding: 0 0 0 16px; height: 187px; border-top: 1px solid rgba(34, 82, 204, 0.3); }
+  .page-home .jobs-rows li:first-child { height: 169px; }
+  .page-home .jobs-rows li:last-child { border-bottom: 1px solid rgba(34, 82, 204, 0.3); }
+  .page-home .jobs-rows li > a:not(.apply) { font-size: 24.75px; line-height: 34.65px; letter-spacing: -1.485px; }
+  .page-home .jobs-rows .apply { width: 99px; height: 32px; padding: 0; border-radius: 10px; text-align: center; font-size: 16px; line-height: 32px; letter-spacing: normal; }
+  .page-home .back-top { position: absolute; left: 0; right: 0; top: 886px; margin: 0; }
+  .page-home .small-btn { min-width: 182px; height: 32px; padding: 0; border-radius: 10px; background: rgb(255, 161, 14); color: #f2f2f2; font-size: 16px; line-height: 32px; }
+
+  .page-home .contact-layout { display: block; margin: 0; }
+  .page-home .contact-intro { position: absolute; left: 40px; top: 156px; max-width: 288px; font-size: 24px; line-height: 33.6px; letter-spacing: -1.92px; }
+  .page-home .contact-live { position: absolute; left: 618px; top: 158px; width: 737px; grid-template-columns: 337px 337px; column-gap: 51px; }
+  .page-home .contact-live h2 { margin: 0 0 39px; font-size: 22px; line-height: 33px; width: 400px; white-space: nowrap; height: 26px; line-height: 26px; margin-bottom: 46px; }
+  .page-home .contact-live label { font-size: 14px; line-height: 19.6px; margin-bottom: 8px; }
+  .page-home .contact-live input { height: 40px; padding: 8px 0; margin-bottom: 41px; font-size: 16px; line-height: 24px; }
+  .page-home .contact-live textarea { height: 75px; min-height: 75px; margin-bottom: 49px; padding: 8px 0; font-size: 16px; line-height: 24px; }
+  .page-home .contact-live label.full { margin-bottom: 16px; }
+  .page-home .contact-live button { min-height: 41px; height: 41px; border-radius: 10px; background: var(--ink); color: #f2f2f2; font-size: 16px; line-height: 19.2px; }
+}
+@media (min-width: 1025px) {
+  .page-home .section-label .dot { width: 15px; height: 15px; top: 5px; border-radius: 3px; }
+  .page-home .industries-head .section-tag::before { width: 15px; height: 15px; top: 5px; }
+}
