@@ -940,7 +940,7 @@ body {
   top: 22px;
 }
 .association-manifesto {
-  margin-top: 120.016px;
+  margin-top: 119px;
   background: linear-gradient(360deg, #ede7d1 25.77%, #ffffff 100%);
 }
 .association-manifesto-inner {
@@ -948,9 +948,14 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   padding: 3.125% 3.125% 0;
+  /* Wix: the section is 124.5vh, the title strip 12.7vh and the frame takes the rest */
+  min-height: 124.5vh;
+  display: flex;
+  flex-direction: column;
 }
 .association-manifesto-title {
-  height: 124.047px;
+  height: 12.7vh;
+  flex: none;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -966,7 +971,9 @@ body {
   text-align: center;
 }
 .association-manifesto-frame {
-  height: 1051.281px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
   padding: 10px 10px 0;
   border-radius: 20px 20px 0 0;
   background: #000;
@@ -974,7 +981,7 @@ body {
 .association-manifesto-panel {
   background: rgb(26, 106, 255);
   border-radius: 11px 11px 0 0;
-  min-height: 1041.281px;
+  flex: 1 0 auto;
   overflow: hidden;
 }
 .association-manifesto-panel p {
@@ -997,7 +1004,7 @@ body {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  min-height: 2813px;
+  min-height: 2884px;
   padding: 31px 0 80px;
 }
 .association-about h1 {
@@ -2044,52 +2051,53 @@ body {
   }
 
   .association-manifesto {
-    margin-top: 8px;
-    padding: 0 8px;
+    margin-top: 0;
+    padding: 30px 30px 0;
   }
   .association-manifesto-inner {
     max-width: none;
     padding: 0;
+    min-height: 0;
   }
   .association-manifesto-title {
-    height: auto;
-    justify-content: flex-start;
-    padding: 18px 14px 14px;
+    height: 80px;
+    justify-content: center;
+    padding: 7px 0 0;
   }
   .association-manifesto-title p {
-    width: 100%;
-    text-align: left;
-    font-size: 14px;
-    line-height: 22px;
+    width: 219px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 24px;
   }
   .association-manifesto-frame {
-    height: auto;
-    padding: 8px 8px 0;
-    border-radius: 12px 12px 0 0;
+    padding: 10px 10px 0;
+    border-radius: 20px 20px 0 0;
   }
   .association-manifesto-panel {
     min-height: 0;
-    border-radius: 8px 8px 0 0;
-    padding-bottom: 20px;
+    border-radius: 3px 3px 0 0;
   }
   .association-manifesto-panel p {
-    margin: 12px 14px 0;
-    width: auto;
+    margin: 0 0 0 17px;
+    width: calc(100% - 34px);
     font-size: 14px;
-    line-height: 22px;
-    letter-spacing: -0.24px;
+    line-height: 22.4px;
+    letter-spacing: -0.84px;
   }
   .association-about-inner {
     max-width: none;
     min-height: 0;
-    padding: 24px 16px 62px;
+    padding: 15px 58px 13px 40px;
   }
+  /* Wix hides this title on phones; keep it for screen readers and search engines */
   .association-about h1 {
-    margin: 0;
-    width: 100%;
-    font-size: 36px;
-    line-height: 38px;
-    letter-spacing: -1.8px;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   .association-copy {
     position: static;
@@ -2097,24 +2105,24 @@ body {
     top: auto;
     width: 100%;
     min-height: 0;
-    margin-top: 22px;
+    margin-top: 0;
   }
   .association-copy p {
     font-size: 16px;
     line-height: 25.6px;
   }
   .association-copy h2 {
-    margin-top: 30px;
-    font-size: 30px;
-    line-height: 33px;
-    letter-spacing: -1.2px;
+    margin-top: 0;
+    font-size: 26px;
+    line-height: 41.6px;
+    letter-spacing: normal;
   }
   .association-privacy {
-    position: static;
-    left: auto;
-    top: auto;
-    width: 100%;
-    margin: 36px 0 0;
+    position: absolute;
+    left: 61px;
+    top: 2964px;
+    width: 264px;
+    margin: 0;
     color: #2252cc;
   }
   .association-dot {
