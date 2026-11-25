@@ -45,10 +45,17 @@
     for (const el of cards) el.style.transform = "";
   }
 
+  // only reset once when leaving phone width: on larger screens industries-stack.js owns the card transforms
+  let active = false;
   let raf = 0;
   function frame() {
     raf = 0;
-    if (!phone.matches || reduced.matches) return clear();
+    if (!phone.matches || reduced.matches) {
+      if (active) clear();
+      active = false;
+      return;
+    }
+    active = true;
     if (header) updateHeader();
     scrub();
   }

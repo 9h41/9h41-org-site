@@ -19,3 +19,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192.png">
 <link rel="stylesheet" href="/assets/css/styles.css">
+<script>
+  // home page from 769px: its 1440px design is scaled to the window (zoom), like the Wix site
+  (function () {
+    function setZoom() { document.documentElement.style.setProperty('--home-zoom', document.documentElement.clientWidth / 1440); }
+    setZoom();
+    addEventListener('resize', setZoom);
+  })();
+</script>

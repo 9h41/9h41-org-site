@@ -1039,17 +1039,16 @@ body {
   letter-spacing: normal;
 }
 .association-privacy {
-  position: absolute;
-  left: 15.625%;
-  top: 1397.422px;
-  width: 68.75%;
-  margin: 0;
+  position: static;
+  width: 74.8438%;
+  margin: 34px 0 0 10.5059%;
   font-family: "azeret-mono", "azeret mono", monospace;
   font-size: 16px;
   line-height: 25.6px;
   letter-spacing: -0.96px;
-  color: #f2f2f2;
+  color: var(--ink);
 }
+.association-privacy a { color: inherit; }
 .association-privacy a {
   color: inherit;
   text-decoration: none;
@@ -1173,6 +1172,9 @@ body {
     content: "×";
     font-size: 30px;
   }
+}
+/* home sections on phones only: from 769px the home page uses its desktop design, scaled (zoom) */
+@media (max-width: 768px) {
   .live-surface {
     margin: 0 12px;
     border-radius: 8px;
@@ -1393,6 +1395,8 @@ body {
     font-size: 22px;
     border-radius: 9px;
   }
+}
+@media (max-width: 1024px) {
   .site-footer {
     margin-top: 0;
     padding: 37px 0 0;
@@ -2119,11 +2123,9 @@ body {
     letter-spacing: normal;
   }
   .association-privacy {
-    position: absolute;
-    left: 61px;
-    top: 2964px;
-    width: 264px;
-    margin: 0;
+    position: static;
+    width: auto;
+    margin: 26px 0 0;
     color: #2252cc;
   }
   .association-dot {
@@ -2172,7 +2174,7 @@ body {
   .page-a11y .legal-frame { margin-top: -4px; padding: 0 20px 112px; }
   .page-a11y .legal-card { border-radius: 0; padding: 0 12px 40px 8px; min-height: 1554px; }
   .page-a11y .legal-title { font-size: 24px; line-height: 26.4px; letter-spacing: -1.44px; margin: -1px 0 0 -8px; position: relative; top: 0; }
-  .page-a11y .legal-body > p:first-of-type { margin-top: -41px; }
+  .page-a11y .legal-body > p:first-of-type { margin-top: 12px; }
   .page-a11y .legal-heading { margin: 0 0 18px; line-height: 22px; }
 }
 
@@ -2182,8 +2184,9 @@ body {
   .page-coding-gouter .nav-wrap { top: 0; min-height: 81px; }
 }
 
-/* Home: full-width bands carry the Wix section gradients; the grey cards sit inside, 23px from the sides */
-@media (min-width: 1025px) {
+/* Home from 769px up (Wix shows its desktop layout, scaled, on tablets too): full-width bands carry the Wix section
+   gradients; the grey cards sit inside, 23px from the sides */
+@media (min-width: 769px) {
   .page-home { background: rgb(34, 82, 204); }
   .home-band { padding: 0 23px 22px; }
   .home-band > section { margin: 0 !important; width: auto; }
@@ -2207,7 +2210,7 @@ body {
 }
 
 /* Home services, Wix grid: lead at x61, three 234px columns at 596 / 876 / 1155, all left-aligned */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .page-home .services-steps { padding: 0 0 0 38px; }
   .page-home .services-steps::before, .page-home .services-steps::after { content: none; }
   .page-home .services-steps > .section-label { position: absolute; left: 40px; top: 81px; margin: 0; }
@@ -2215,12 +2218,12 @@ body {
     margin: 87px 0 0;
     width: auto;
     max-width: none;
-    grid-template-columns: 34vw 16.25vw 16.25vw 16.25vw;
-    column-gap: 3.16vw;
+    grid-template-columns: 489.5px 234px 234px 234px;
+    column-gap: 45.5px;
     row-gap: 0;
   }
-  .page-home .steps-lead { margin: 69px 0 0; width: min(369px, 32vw); max-width: none; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .steps-layout .step-card { display: block; max-width: none; width: 16.25vw; }
+  .page-home .steps-lead { margin: 69px 0 0; width: 369px; max-width: none; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
+  .page-home .steps-layout .step-card { display: block; max-width: none; width: 234px; }
   .page-home .steps-layout .step-card .step-num { width: auto; max-width: none; text-align: left; transform-origin: 0 62%; }
   .page-home .steps-layout .step-card h3,
   .page-home .steps-layout .step-card > p:not(.step-num) { text-align: left; width: auto; max-width: 234px; margin-left: 0; }
@@ -2232,20 +2235,20 @@ body {
 }
 
 /* Home industries, Wix geometry: 797 x 464 cards from y+154, 509px apart */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .page-home .industries { border: 0; }
-  .page-home .industries-inner { grid-template-columns: 38.68vw minmax(0, 1fr); min-height: 1717px; }
-  .page-home .industries-head { width: 38.68vw; padding: 80px 0 0 40px; }
+  .page-home .industries-inner { grid-template-columns: 557px minmax(0, 1fr); min-height: 1717px; }
+  .page-home .industries-head { width: 557px; padding: 80px 0 0 40px; }
   .page-home .industries-head h2 { margin-top: 49px; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
-  .page-home .industry-stack-wrap { margin-top: 154px; width: 55.35vw; min-height: 464px; }
-  .page-home .stack-card { height: 464px; padding: 39px 40px 0; background: rgba(255, 161, 14, 0.39); border-radius: 11.25px; transform: translate3d(0, calc(var(--i) * 509px), 0); }
-  .page-home .industry-inner { height: auto; min-height: 349px; padding: 71px 72px 40px 71px; background: rgba(242, 242, 242, 0.3); }
+  .page-home .industry-stack-wrap { margin-top: 154px; width: 797px; min-height: 464px; }
+  .page-home .stack-card { height: 464px; padding: 39px 40px 0; background: rgb(247, 210, 153); border-radius: 11.25px; transform: translate3d(0, calc(var(--i) * 509px), 0); }
+  .page-home .industry-inner { height: auto; min-height: 349px; padding: 71px 72px 40px 71px; background: rgb(246, 220, 180); }
   .page-home .stack-card ul { margin-top: 31px; }
   .page-home .stack-card li:not(:last-child) { margin-bottom: 28.8px; }
 }
 
 /* Home lower sections, Wix geometry (offsets from each card's top-left corner at x23) */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .page-home .clients-block,
   .page-home .figures-block,
   .page-home .jobs-block,
@@ -2254,9 +2257,9 @@ body {
   .page-home .clients-block > .section-label { left: 45px; top: 86px; }
   .page-home .clients-logos { transform: translateX(-7px); }
 
-  .page-home .figures-grid { position: absolute; top: 180px; left: 6.46vw; margin: 0; width: auto; grid-template-columns: repeat(4, 14.93vw); gap: 8.06vw; }
+  .page-home .figures-grid { position: absolute; top: 180px; left: 93px; margin: 0; width: auto; grid-template-columns: repeat(4, 215px); gap: 116px; }
   .page-home .figures-grid strong { font-family: "k2d", sans-serif; margin-top: 22px; font-weight: 700; font-size: 108px; line-height: 118.8px; letter-spacing: -5.4px; }
-  .page-home .figures-grid span { top: 150px; width: 14.93vw; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
+  .page-home .figures-grid span { top: 150px; width: 215px; font-size: 18px; line-height: 25.2px; letter-spacing: -1.44px; }
 
   .page-home .jobs-block h2 { position: absolute; left: 40px; top: 156px; margin: 0; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .jobs-rows { position: absolute; left: 40px; right: 40px; top: 246px; margin: 0; max-width: none; }
@@ -2270,7 +2273,7 @@ body {
 
   .page-home .contact-layout { display: block; margin: 0; }
   .page-home .contact-intro { position: absolute; left: 40px; top: 156px; max-width: 288px; font-size: 24px; line-height: 33.6px; letter-spacing: -1.92px; }
-  .page-home .contact-live { position: absolute; left: 42.92vw; top: 158px; width: 51.18vw; grid-template-columns: 23.4vw 23.4vw; column-gap: 3.54vw; }
+  .page-home .contact-live { position: absolute; left: 618px; top: 158px; width: 737px; grid-template-columns: 337px 337px; column-gap: 51px; }
   .page-home .contact-live h2 { margin: 0 0 39px; font-size: 22px; line-height: 33px; width: 400px; white-space: nowrap; height: 26px; line-height: 26px; margin-bottom: 46px; }
   .page-home .contact-live label { font-size: 14px; line-height: 19.6px; margin-bottom: 8px; }
   .page-home .contact-live input { height: 40px; padding: 8px 0; margin-bottom: 41px; font-size: 16px; line-height: 24px; }
@@ -2278,7 +2281,7 @@ body {
   .page-home .contact-live label.full { margin-bottom: 16px; }
   .page-home .contact-live button { min-height: 41px; height: 41px; border-radius: 10px; background: var(--ink); color: #f2f2f2; font-size: 16px; line-height: 19.2px; }
 }
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   .page-home .section-label .dot { width: 15px; height: 15px; top: 5px; border-radius: 3px; }
   .page-home .industries-head .section-tag::before { width: 15px; height: 15px; top: 5px; }
 }
@@ -2338,8 +2341,8 @@ body {
   .page-home .industries-head h2 br { display: none; }
   .page-home .stack-card:last-child { margin-bottom: 0; }
   .page-home .stack-card { transform-origin: 50% 50%; backface-visibility: visible; }
-  .page-home .stack-card { position: static; width: auto; max-width: 320px; height: auto; margin: 0 auto 41px; padding: 40px 20px; border-radius: 11.25px; background: rgba(255, 161, 14, 0.39); text-align: center; }
-  .page-home .industry-inner { min-height: 0; height: auto; padding: 43px 20px 0; background: rgba(242, 242, 242, 0.3); }
+  .page-home .stack-card { position: static; width: auto; max-width: 320px; height: auto; margin: 0 auto 41px; padding: 40px 20px; border-radius: 11.25px; background: rgb(247, 210, 153); text-align: center; }
+  .page-home .industry-inner { min-height: 0; height: auto; padding: 43px 20px 0; background: rgb(246, 220, 180); }
   .page-home .stack-card h3 { max-width: 240px; margin: 0 auto; font-size: 22px; line-height: 30.8px; letter-spacing: -1.76px; }
   .page-home .stack-card ul { width: 200px; margin: 21px auto 0; font-size: 16px; line-height: 25.6px; letter-spacing: -0.96px; }
   .page-home .stack-card li { margin: 0 0 26px; }
@@ -2427,12 +2430,15 @@ body {
 }
 .section-label .dot,
 .industries-head .section-tag::before { animation: motion-pulse 2s linear infinite; }
+/* phones: home loops and scroll-effects.js styling */
 @media (max-width: 768px) {
   .page-home .figures-block .section-label .dot { animation-duration: 3s; }
   .page-home .jobs-rows .job-icon { animation: motion-breathe 5s linear infinite; }
   .page-home .steps-layout .step-card .step-num { opacity: 1; transition: none; transform-origin: 50% 50%; }
   .page-home .figures-grid strong { display: inline-block; transform-origin: 50% 50%; }
   .page-home .stack-card { will-change: transform; }
+}
+@media (max-width: 768px) {
   /* pinned, transparent header that slides away while scrolling down (scroll-effects.js) */
   .site-header,
   .page-home .site-header,
@@ -2446,7 +2452,18 @@ body {
   .industries-head .section-tag::before,
   .page-home .jobs-rows .job-icon { animation: none; }
 }
+
+/* Home from 769px: laid out on the 1440px Wix design and scaled to the window, as Wix does
+   (--home-zoom = window width / 1440, set in the page head) */
+@media (min-width: 769px) {
+  .page-home main.page-content { zoom: var(--home-zoom, 1); }
+}
+@media (min-width: 769px) {
+  /* the hero's viewport formulas, frozen at their 1440px values inside the zoomed home page */
+  .page-home .speech-box { padding: 25px 120px 34px; width: 1282px; margin-top: 119px; margin-left: 8.78px; }
+  .page-home .hero-title { max-width: 664.13px; font-size: 77.625px; line-height: 85.388px; }
+  .page-home .hero-caption { max-width: 625px; }
+}
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* tablets: one centred column, so the numbers sit in the middle like the text below them */
-  .steps-layout .step-card .step-num { text-align: center; width: auto; max-width: none; justify-self: stretch; transform-origin: 50% 62%; }
+  .page-home .site-header { position: absolute; top: 0; left: 0; right: 0; background: transparent; }
 }

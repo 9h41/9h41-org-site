@@ -5,7 +5,7 @@
   const stickyTrack = section.querySelector(".industry-stack-wrap");
   if (!pinnedInner || !stickyTrack) return;
 
-  const media = window.matchMedia("(max-width: 1024px)");
+  const media = window.matchMedia("(max-width: 768px)");
   const phone = window.matchMedia("(max-width: 768px)"); // phones: scroll-effects.js turns the cards in
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const cards = Array.from(section.querySelectorAll(".stack-card"));
@@ -29,12 +29,14 @@
       return;
     }
 
-    const stickyTop = 126;
-    const trackOffset = parseFloat(getComputedStyle(stickyTrack).marginTop) || 74;
-    const start = section.offsetTop + trackOffset - stickyTop;
+    // the home page may be zoomed (scaled 1440px design): CSS lengths are multiplied by z on screen
+    const z = parseFloat(getComputedStyle(section.closest(".page-content") || section).zoom) || 1;
+    const stickyTop = 126 * z;
+    const trackOffset = (parseFloat(getComputedStyle(stickyTrack).marginTop) || 74) * z;
+    const start = section.getBoundingClientRect().top + window.scrollY + trackOffset - stickyTop;
     const stickyDistance = Math.max(
       1,
-      pinnedInner.offsetHeight - stickyTrack.offsetHeight - stickyTop
+      pinnedInner.getBoundingClientRect().height - stickyTrack.getBoundingClientRect().height - stickyTop
     );
     const sectionProgress = clamp((window.scrollY - start) / stickyDistance, 0, 1);
 
@@ -53,7 +55,7 @@
     });
 
     // Fade text on cards that are currently covered by a card above.
-    const cardHeight = cards[0]?.offsetHeight || stickyTrack.offsetHeight || 482;
+    const cardHeight = (cards[0]?.getBoundingClientRect().height || 482 * z) / z;
     cards.forEach((card, index) => {
       let covered = false;
       for (let j = index + 1; j < cards.length; j += 1) {
